@@ -27,7 +27,7 @@ public class OptAppLaunchDelay extends BaseHook {
     public void init() throws NoSuchMethodException {
         findAndHookMethod("com.android.systemui.shared.recents.utilities.WindowTransitionCallbackHelper", "executeFinishCallback", boolean.class, boolean.class, int.class, "android.window.WindowContainerTransaction", "com.android.systemui.shared.recents.utilities.ShellTransitionCallback", boolean.class, boolean.class, new MethodHook() {
             @Override
-            protected void before(MethodHookParam param) throws Throwable {
+            protected void before(MethodHookParam param) {
                 param.args[5] = false;
             }
         });

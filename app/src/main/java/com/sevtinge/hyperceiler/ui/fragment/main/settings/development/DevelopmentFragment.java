@@ -18,7 +18,6 @@
  */
 package com.sevtinge.hyperceiler.ui.fragment.main.settings.development;
 
-import static com.sevtinge.hyperceiler.utils.log.LogManager.fixLsposedLogService;
 import static com.sevtinge.hyperceiler.utils.shell.ShellUtils.rootExecCmd;
 
 import android.view.LayoutInflater;
@@ -77,12 +76,7 @@ public class DevelopmentFragment extends SettingsPreferenceFragment implements P
                         Toast.makeText(getActivity(), R.string.delete_all_dexkit_cache_success, Toast.LENGTH_LONG).show();
                     });
             case "prefs_key_development_fix_lsposed_log" -> {
-                String fixReturn = fixLsposedLogService();
-                if (fixReturn.equals("SUCCESS")) {
-                    Toast.makeText(getActivity(), R.string.success, Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(getActivity(), getString(R.string.failed) + ": " + fixReturn, Toast.LENGTH_LONG).show();
-                }
+                //show
             }
         }
         return true;
